@@ -1,0 +1,14 @@
+Component,Rate,Unit,LossFactor,ChargeType
+VIC_Peak,11.5511,c/kWh,1.06013,usage_peak
+VIC_Off_Peak,8.0880,c/kWh,1.06013,usage_offpeak
+LRECs,0.9663,c/kWh,1.05960,environment
+VEECs,1.3831,c/kWh,1.05960,environment
+SRECs,0.8451,c/kWh,1.05960,environment
+LLVT2_Peak_Energy,4.0900,c/kWh,,network_peak
+LLVT2_Off_Peak_Energy,2.9000,c/kWh,,network_offpeak
+LLVT2_Peak_Demand,11.6000,$/kVA/Mth,,demand
+LLVT2_Summer_Incentive_Demand,8.7700,$/kVA/Mth,,demand
+AEMO_Market_Fee,2.1756,c/day,1.00000,fixed
+AEMO_Ancillary_Fee_UFE,0.0215,c/kWh,1.05960,usage_total
+AEMO_Market_Fee_Daily,0.0394,c/kWh,1.05960,usage_total
+Meter_Charge,2400.0000,$/meter/year,,fixed

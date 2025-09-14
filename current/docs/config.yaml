@@ -1,0 +1,57 @@
+regions:
+  VIC:
+    retail_peak_start: 7
+    retail_peak_end: 19
+    network_peak_hours: [14, 15, 16, 17, 18]
+    loss_factor: 1.06013
+    summer_months: [12, 1, 2]
+
+providers:
+  - name: "Shell Energy"
+    type: "RETAILER"
+
+tariff_plans:
+  - name: "Shell Tariff Plan"
+    provider: "Shell Energy"
+    region: "VIC"
+    components_path: "../tariffs/tariffs_shell.csv"
+
+unit_definitions:
+  c:
+    conversion_type: static
+    factor: 0.01
+  $:
+    conversion_type: static
+    factor: 1
+  kWh:
+    conversion_type: static
+    factor: 1
+  Mth:
+    conversion_type: dynamic
+    factor_function: days_in_month
+    factor: 1
+  year:
+    conversion_type: dynamic
+    factor_function: days_in_year
+    factor: 1
+  day:
+    conversion_type: static
+    factor: 1
+  kVA:
+    conversion_type: static
+    factor: 1
+  meter:
+    conversion_type: static
+    factor: 1
+
+charge_formulas:
+  usage_peak: "peak_usage * rate * loss_factor"
+  usage_offpeak: "off_peak_usage * rate * loss_factor"
+  usage_total: "total_usage * rate * loss_factor"
+  fixed: "rate"
+  demand: "max_kva * rate"
+  environment: "total_usage * rate * loss_factor"
+  network_peak: "peak_usage * rate * loss_factor"
+  network_offpeak: "off_peak_usage * rate * loss_factor"
+  
+output_path: '../results/invoice_breakdown.csv'

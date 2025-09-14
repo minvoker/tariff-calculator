@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal Demo – Customer Bill</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; max-width: 640px; }
+    .row { display: flex; gap: 8px; margin-bottom: 8px; }
+    label { min-width: 140px; }
+    input { flex: 1; padding: 6px 8px; }
+    button { padding: 8px 12px; cursor: pointer; }
+    pre { background: #f8f8f8; padding: 12px; overflow: auto; }
+    table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #fafafa; }
+  </style>
+</head>
+<body>
+  <h1>Customer Bill (Demo)</h1>
+  <div class="card">
+    <div class="row">
+      <label>Customer ID</label>
+      <input id="customerId" placeholder="e.g. 1"/>
+    </div>
+    <div class="row">
+      <label>Tariff Version ID</label>
+      <input id="tariffVersionId" placeholder="e.g. 7"/>
+    </div>
+    <div class="row">
+      <label>Start (ISO)</label>
+      <input id="start" placeholder="YYYY-MM-DDTHH:mm:ss"/>
+    </div>
+    <div class="row">
+      <label>End (ISO)</label>
+      <input id="end" placeholder="YYYY-MM-DDTHH:mm:ss"/>
+    </div>
+    <div class="row">
+      <button onclick="calcAndStore()">Calculate & Store</button>
+      <button onclick="fetchBill()">Fetch Stored Bill</button>
+    </div>
+    <div id="out"></div>
+  </div>
+
+  <script>
+    const BASE = (window.API_BASE || "http://127.0.0.1:8000");
+
+    function val(id){ return document.getElementById(id).value.trim(); }
+
+    function renderResult(obj){
+      const out = document.getElementById('out');
+      if(!obj) { out.innerHTML = '<p>No result</p>'; return; }
+      const b = (obj.breakdown || {});
+      let rows = '';
+      Object.keys(b).forEach(k => {
+        const item = b[k];
+        rows += `<tr><td>${k}</td><td>${item.units_used ?? ''} ${item.unit_label ?? ''}</td><td>$${item.cost ?? ''}</td></tr>`;
+      });
+      out.innerHTML = `
+        <h3>Total: $${obj.total_cost ?? '0.00'}</h3>
+        <table>
+          <thead><tr><th>Component</th><th>Units</th><th>Cost</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <pre>${JSON.stringify(obj, null, 2)}</pre>
+      `;
+    }
+
+    async function calcAndStore(){
+      const payload = {
+        customer_id: parseInt(val('customerId')),
+        tariff_version_id: parseInt(val('tariffVersionId')),
+        start: val('start'),
+        end: val('end')
+      };
+      const r = await fetch(`${BASE}/bills/calculate-and-store`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const data = await r.json();
+      renderResult(data);
+    }
+
+    async function fetchBill(){
+      const q = new URLSearchParams({
+        start: val('start'),
+        end: val('end'),
+        tariff_version_id: val('tariffVersionId')
+      });
+      const r = await fetch(`${BASE}/customers/${val('customerId')}/bills?` + q.toString());
+      const data = await r.json();
+      renderResult(data);
+    }
+  </script>
+</body>
+</html>

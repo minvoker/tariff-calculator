@@ -1,0 +1,284 @@
+{
+  "aggregates": {
+    "total_usage": 1661.184,
+    "peak_usage": 836.288,
+    "off_peak_usage": 824.896,
+    "max_kva": 103.877,
+    "days": 1
+  },
+  "components": {
+    "VIC_Peak": {
+      "unit": "c/kWh",
+      "rate_raw": 11.5511,
+      "rate_converted": 0.115511,
+      "loss_factor": 1.06013,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.115511,
+        "loss_factor": 1.06013,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 102.41,
+      "expected": 118.19,
+      "diff": -15.78
+    },
+    "VIC_Off_Peak": {
+      "unit": "c/kWh",
+      "rate_raw": 8.088,
+      "rate_converted": 0.08088,
+      "loss_factor": 1.06013,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.08088,
+        "loss_factor": 1.06013,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 70.73,
+      "expected": 59.68,
+      "diff": 11.05
+    },
+    "LRECs": {
+      "unit": "c/kWh",
+      "rate_raw": 0.9663,
+      "rate_converted": 0.009663000000000001,
+      "loss_factor": 1.0596,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.009663000000000001,
+        "loss_factor": 1.0596,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 17.01,
+      "expected": 17.01,
+      "diff": 0.0
+    },
+    "VEECs": {
+      "unit": "c/kWh",
+      "rate_raw": 1.3831,
+      "rate_converted": 0.013831,
+      "loss_factor": 1.0596,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.013831,
+        "loss_factor": 1.0596,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 24.35,
+      "expected": 24.35,
+      "diff": 0.0
+    },
+    "SRECs": {
+      "unit": "c/kWh",
+      "rate_raw": 0.8451,
+      "rate_converted": 0.008451,
+      "loss_factor": 1.0596,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.008451,
+        "loss_factor": 1.0596,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 14.88,
+      "expected": 14.88,
+      "diff": 0.0
+    },
+    "LLVT2_Peak_Energy": {
+      "unit": "c/kWh",
+      "rate_raw": 4.09,
+      "rate_converted": 0.0409,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.0409,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 34.2,
+      "expected": 39.47,
+      "diff": -5.27
+    },
+    "LLVT2_Off_Peak_Energy": {
+      "unit": "c/kWh",
+      "rate_raw": 2.9,
+      "rate_converted": 0.028999999999999998,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.028999999999999998,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 23.92,
+      "expected": 20.19,
+      "diff": 3.73
+    },
+    "LLVT2_Peak_Demand": {
+      "unit": "$/kVA/Mth",
+      "rate_raw": 11.6,
+      "rate_converted": 0.37419354838709673,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.37419354838709673,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 38.87,
+      "expected": 38.87,
+      "diff": 0.0
+    },
+    "LLVT2_Summer_Incentive_Demand": {
+      "unit": "$/kVA/Mth",
+      "rate_raw": 8.77,
+      "rate_converted": 0.2829032258064516,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.2829032258064516,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 29.39,
+      "expected": 0.0,
+      "diff": 29.39
+    },
+    "AEMO_Market_Fee_30_Days": {
+      "unit": "c/day",
+      "rate_raw": 2.1756,
+      "rate_converted": 0.021756,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.021756,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 0.02,
+      "expected": 0.02,
+      "diff": 0.0
+    },
+    "AEMO_Ancillary_Fee_UFE": {
+      "unit": "c/kWh",
+      "rate_raw": 0.0215,
+      "rate_converted": 0.000215,
+      "loss_factor": 1.0596,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.000215,
+        "loss_factor": 1.0596,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 0.38,
+      "expected": 0.38,
+      "diff": 0.0
+    },
+    "AEMO_Market_Fee_Daily": {
+      "unit": "c/kWh",
+      "rate_raw": 2.1756,
+      "rate_converted": 0.021756,
+      "loss_factor": 1.0596,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 0.021756,
+        "loss_factor": 1.0596,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 38.29,
+      "expected": 0.69,
+      "diff": 37.6
+    },
+    "Meter_Charge": {
+      "unit": "$/meter/year",
+      "rate_raw": 2400.0,
+      "rate_converted": 6.575342465753424,
+      "loss_factor": 1.0,
+      "variables": {
+        "total_usage": 1661.184,
+        "peak_usage": 836.288,
+        "off_peak_usage": 824.896,
+        "max_kva": 103.877,
+        "incentive_kva": 103.877,
+        "rate": 6.575342465753424,
+        "loss_factor": 1.0,
+        "days": 1,
+        "period_start": "2023-08-01",
+        "period_end": "2023-08-01"
+      },
+      "cost": 6.58,
+      "expected": 6.58,
+      "diff": 0.0
+    }
+  }
+}
